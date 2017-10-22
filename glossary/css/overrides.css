@@ -1,0 +1,15 @@
+body {
+  background-color: Cornsilk;
+}
+
+.navbar-default {
+  border-bottom: 2px solid Cyan;
+}
+
+.navbar-default .navbar-toggle {
+  border-color: Cyan;
+}
+
+.navbar-default .navbar-toggle .icon-bar {
+  background-color: White;
+}

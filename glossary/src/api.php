@@ -7,7 +7,7 @@ parse_str($query, $params);
 #	echo $key . " " . $value;
 #}
 
-$ALLOWED_METHODS = array("getTranslation");
+$ALLOWED_METHODS = array('searchGlossary');
 
 $method = $params["method"];
 if (!isset($method)) {
@@ -25,4 +25,3 @@ header("Access-Control-Allow-Origin: *");
 header("Content-Type: application/json; charset=UTF-8");
 
 echo json_encode($params);
-
