@@ -1,0 +1,20 @@
+MariaDB [openscope]> describe ORIGINAL;
++-------+--------------+------+-----+---------+----------------+
+| Field | Type         | Null | Key | Default | Extra          |
++-------+--------------+------+-----+---------+----------------+
+| ID    | int(11)      | NO   | PRI | NULL    | auto_increment |
+| WORD  | varchar(255) | NO   | UNI | NULL    |                |
++-------+--------------+------+-----+---------+----------------+
+2 rows in set (0.00 sec)
+
+MariaDB [openscope]> describe TRANSLATION;
++-------------+--------------+------+-----+---------+-------+
+| Field       | Type         | Null | Key | Default | Extra |
++-------------+--------------+------+-----+---------+-------+
+| ID          | int(11)      | NO   | PRI | NULL    |       |
+| ORIGINAL_ID | int(11)      | NO   | MUL | NULL    |       |
+| WORD        | varchar(255) | NO   |     | NULL    |       |
+| CONTEXT     | varchar(255) | YES  |     | NULL    |       |
+| comment     | text         | YES  |     | NULL    |       |
++-------------+--------------+------+-----+---------+-------+
+5 rows in set (0.01 sec)

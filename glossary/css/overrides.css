@@ -13,3 +13,7 @@ body {
 .navbar-default .navbar-toggle .icon-bar {
   background-color: White;
 }
+
+.navbar-default .navbar-brand {
+  padding: 10px 15px;
+}

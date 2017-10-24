@@ -19,7 +19,7 @@
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
 					</button>
-					<img class="navbar-brand" src="images/openscope-white.png" alt="OpenScope" style="padding: 10px 15px;" />
+					<img class="navbar-brand" src="images/openscope-white.png" alt="OpenScope" title="OpenScope – magyar honosítók közössége" />
 				</div>
 				<div id="navbar" class="collapse navbar-collapse">
 					<ul class="nav navbar-nav">
