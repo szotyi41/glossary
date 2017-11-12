@@ -6,7 +6,7 @@ define({
 				callback(this.responseText);
 			}
 		});
-		ajax.open('GET', 'api.php?method=searchGlossary&word=' + word);
+		ajax.open('GET', 'hello/api.php?method=searchGlossary&word=' + word);
 		ajax.send();
 	}
 });
