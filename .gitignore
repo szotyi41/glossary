@@ -1,1 +1,6 @@
 src/vendor
+**/.buildpath
+**/.project
+**/.settings/
+src/composer.phar
+

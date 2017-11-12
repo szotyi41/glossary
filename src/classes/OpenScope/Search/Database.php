@@ -1,4 +1,7 @@
 <?php
+namespace OpenScope\Search;
+
+use mysqli;
 
 class Database {
   private static $instance;
