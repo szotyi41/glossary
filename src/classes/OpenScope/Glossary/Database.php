@@ -19,7 +19,7 @@ class Database {
 
   public function getConnection() {
     if ($this->connection === null) {
-      $this->connection = new mysqli("localhost", "openscope", "openscope", "openscope");
+      $this->connection = new mysqli("172.17.0.1", "openscope", "openscope", "openscope");
       if ($this->connection->connect_errno) {
         die("Failed to connect to MySQL: " . $this->connection->connect_error);
       }
