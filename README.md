@@ -19,7 +19,7 @@ Ezután indítható a Docker konténer, a következő parancsokkal:
 
 ```
 docker build -t glossary .
-docker run glossary
+docker run -v /path/to/glossary:/var/www/html glossary
 ```
 
 A böngészőben itt lesz elérhető a projekt:
