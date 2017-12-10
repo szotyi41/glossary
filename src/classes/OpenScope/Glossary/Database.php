@@ -1,5 +1,5 @@
 <?php
-namespace OpenScope\Search;
+namespace OpenScope\Glossary;
 
 use mysqli;
 
