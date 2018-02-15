@@ -21,14 +21,11 @@ class Glossary {
         $mysqli = $database->getConnection();
         $mysqli->set_charset("utf8");
 
-        $word = $_GET["word"];
         $json = array();
         $sql = "
-	      SELECT ORIGINAL.WORD AS oword, TRANSLATION.WORD AS tword, TRANSLATION.CONTEXT, TRANSLATION.comment
-	      FROM ORIGINAL
-	      INNER JOIN TRANSLATION ON ORIGINAL.ID = TRANSLATION.ORIGINAL_ID
-	      WHERE ORIGINAL.WORD LIKE '" . $word . "%'
-	      LIMIT 10
+        SELECT ORIGINAL.WORD AS oword, TRANSLATION.WORD AS tword, TRANSLATION.CONTEXT, TRANSLATION.comment
+        FROM ORIGINAL
+        INNER JOIN TRANSLATION ON ORIGINAL.ID = TRANSLATION.ORIGINAL_ID
         ";
 
         if($result = $mysqli->query($sql)) {
@@ -42,9 +39,9 @@ class Glossary {
 
         $mysqli->close();
 
-        return json_encode($json, JSON_UNESCAPED_UNICODE);
+        return $json;
     }
 
 }
 
-echo Glossary::getEntry();
+echo json_encode(Glossary::getEntry(), JSON_UNESCAPED_UNICODE);

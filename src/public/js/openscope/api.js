@@ -6,7 +6,7 @@ define({
 				callback(this.responseText);
 			}
 		});
-		ajax.open('GET', 'glossary/Glossary.php?method=searchGlossary&word=' + word);
+		ajax.open('GET', '../classes/OpenScope/Glossary/Glossary.php?method=searchGlossary&word=' + word);
 		ajax.send();
 	}
 });
