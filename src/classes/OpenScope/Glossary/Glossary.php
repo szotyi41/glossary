@@ -1,10 +1,14 @@
 <?php
+
 namespace OpenScope\Glossary;
 
 require "Database.php";
 
 class Glossary {
+
     private static $instance;
+    public $database;
+    public $connection;
 
     public static function getInstance() {
         if (self::$instance === null) {
@@ -14,14 +18,13 @@ class Glossary {
     }
 
     public function __construct() {
+        $this->database = Database::getInstance();
+        $this->connection = $this->database->getConnection(); 
+        $this->connection->set_charset("utf8");
     }
 
-    public static function getEntry() {
-        $database = new Database();
-        $mysqli = $database->getConnection();
-        $mysqli->set_charset("utf8");
+    public function getResults($word) {
 
-        $word = $_GET["word"];
         $json = array();
         $sql = "
 	      SELECT ORIGINAL.WORD AS oword, TRANSLATION.WORD AS tword, TRANSLATION.CONTEXT, TRANSLATION.comment
@@ -31,7 +34,7 @@ class Glossary {
 	      LIMIT 10
         ";
 
-        if($result = $mysqli->query($sql)) {
+        if($result = $this->connection->query($sql)) {
 
             while($row = $result->fetch_assoc()) {
                 $json[] = $row;
@@ -40,11 +43,11 @@ class Glossary {
             $result->close();
         }
 
-        $mysqli->close();
+        $this->connection->close();
 
         return json_encode($json, JSON_UNESCAPED_UNICODE);
     }
 
 }
 
-echo Glossary::getEntry();
+echo (new Glossary())->getResults($_GET["word"]);

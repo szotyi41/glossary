@@ -27,4 +27,5 @@ class Database {
     }
     return $this->connection;
   }
+
 }
